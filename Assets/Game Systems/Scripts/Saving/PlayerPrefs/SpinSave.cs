@@ -7,12 +7,16 @@ public class SpinSave : MonoBehaviour
 {
     //public string isSpinning;
     public bool isSpinning;
+    public string spinning;
+    
  
     //isBool = bool.Parse(PlayerPrefs.GetString("Test Bool", "false"))
     //PlayerPrefs.SetString("Test Bool", isBool.ToString());
 
     private void Update()
     {
+
+
         //When User Presses button 7
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
@@ -33,9 +37,10 @@ public class SpinSave : MonoBehaviour
             //Set = Write = Save
             //Sets the value of the preference identified by key
             //PlayerPrefs.SetString("Test String", stringToSaveAndLoad); Commented out due to compiler error for now.
-
-            PlayerPrefs.SetInt("Test Float", 1);
-            PlayerPrefs.SetFloat("Test Float", 1f);
+            isSpinning = bool.Parse(PlayerPrefs.GetString("Test Bool"));
+            PlayerPrefs.SetString("Test Bool", "false");
+            //PlayerPrefs.SetInt("Test Float", 1);
+            //PlayerPrefs.SetFloat("Test Float", 1f);
             //Writes all modified preferences to disk
             PlayerPrefs.Save();
 
