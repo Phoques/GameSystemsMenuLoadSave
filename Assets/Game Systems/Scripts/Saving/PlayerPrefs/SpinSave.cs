@@ -38,7 +38,7 @@ public class SpinSave : MonoBehaviour
             //Sets the value of the preference identified by key
             //PlayerPrefs.SetString("Test String", stringToSaveAndLoad); Commented out due to compiler error for now.
             isSpinning = bool.Parse(PlayerPrefs.GetString("Test Bool"));
-            PlayerPrefs.SetString("Test Bool", "false");
+            PlayerPrefs.SetString("Test Bool", isSpinning.ToString());
             //PlayerPrefs.SetInt("Test Float", 1);
             //PlayerPrefs.SetFloat("Test Float", 1f);
             //Writes all modified preferences to disk
